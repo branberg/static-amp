@@ -1,0 +1,243 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  
+  <link rel="icon" type="image/png" href="/img/favicon2.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>Amp: Online tools made for your music.</title>
+  <meta name="description" content="Amp is a way for musicians to create custom websites, manage their music, connect with fans and much more."/>
+  <link rel="canonical" href="http://amp-music.com/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Amp: Online tools made for your music." />
+  <meta property="og:description" content="Amp is a way for musicians to create custom websites, manage their music, connect with fans and much more." />
+  <meta property="og:url" content="http://amp-music.com/" />
+  <meta property="og:site_name" content="Amp" />
+
+  <link rel='stylesheet' id='googlefonts-css'  href='http://fonts.googleapis.com/css?family=Montserrat%3A400%2C700%7COpen+Sans%3A300italic%2C400italic%2C600italic%2C700italic%2C800italic%2C400%2C300%2C600%2C700%2C800&#038;ver=4.0.1' type='text/css' media='all' />
+  <link rel='stylesheet' id='default-css'  href='/css/style.css' type='text/css' media='all' />
+
+  <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <script type='text/javascript'>try{jQuery.noConflict();}catch(e){};</script>
+  <script type='text/javascript' src='/js/jquery-migrate.min.js'></script>
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44896644-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+</head>
+<body class="home page page-id-5 page-template page-template-template-landing-php">
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=215986878585752";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+
+  <div id="mobile_menu"></div>
+
+  <div id="wrapper">
+
+    <header id="main_header">
+      <div class="wrap">
+
+        <a href="/" id="header_logo">
+          <img id="mini_logo" src="/img/logo-30x30-black.svg" alt="Header Logo" />
+          <img id="full_logo" src="/img/logo-noframe.svg" alt="Header Logo" />
+        </a>
+
+        <a href="#" id="mobile_toggle">
+          <img src="/img/mobile_toggle-black.svg" alt="Mobile Toggle">
+        </a>
+
+        <nav id="main_nav">
+          <ul id="menu-main-menu" class="menu">
+            <li><a href="/blog">Blog</a></li>
+            <li><a target="_blank" href="https://twitter.com/musiciansamp">Twitter</a></li>
+            <li><a target="_blank" href="https://www.facebook.com/pages/Amp-Music/537243319678768">Facebook</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header> 
+
+  <div id="welcome_slide">
+
+    <div id="video_background">
+      <video autoplay loop>
+        <source src="/video/amp_video01.webm" type="video/webm" />
+        <source src="/video/amp_video01.ogv" type="video/ogg" />
+        <source src="/video/amp_video01.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div id="video_overlay"></div>
+
+    <div id="welcome_text">
+            <img src="/img/logo-noframe.svg" alt="" />
+      <h1 id="tagline">Online tools made for your music.</h1>
+    </div>
+
+  </div>
+
+  <div id="content_spacer"></div>
+
+  <div id="main_content">
+    
+    <div class="wrap">
+      
+      <h2 class="tagline">Plug you into the worldwide web.</h2>
+      
+      
+        <ul class="features">
+          
+          
+            <li class="feature fourcol ">
+              <div class="feature_icon">
+                                <img src="/img/amp_icons-music2.svg" alt="" />
+              </div>
+              <h3 class="feature_title">Your Music</h3>
+              <p class="feature_blurb">Deliver your music to fans. Upload your music to Amp allowing fans to stream and download it.</p>
+            </li>
+
+          
+            <li class="feature fourcol ">
+              <div class="feature_icon">
+                                <img src="/img/amp_icons-tour.svg" alt="" />
+              </div>
+              <h3 class="feature_title">Your Shows</h3>
+              <p class="feature_blurb">Create shows and tours managing individual dates using Amp&#039;s flexible tour database.</p>
+            </li>
+
+          
+            <li class="feature fourcol last">
+              <div class="feature_icon">
+                                <img src="/img/amp_icons-team2.svg" alt="" />
+              </div>
+              <h3 class="feature_title">Your Team</h3>
+              <p class="feature_blurb">Add bandmates, managers, or your great aunt. Amp allows multiple points of access enabling teamwork backstage.</p>
+            </li>
+
+          
+            <li class="feature fourcol ">
+              <div class="feature_icon">
+                                <img src="/img/amp_icons-website2.svg" alt="" />
+              </div>
+              <h3 class="feature_title">Your Website</h3>
+              <p class="feature_blurb">No coding necessary. Customize your responsive site to best suit your needs. You&#039;ll also receive your own domain name.</p>
+            </li>
+
+          
+            <li class="feature fourcol ">
+              <div class="feature_icon">
+                                <img src="/img/amp_icons-media.svg" alt="" />
+              </div>
+              <h3 class="feature_title">Your Media</h3>
+              <p class="feature_blurb">Post photos, sync your Instagram pics, and premiere your latest music videos like a boss.</p>
+            </li>
+
+          
+            <li class="feature fourcol last">
+              <div class="feature_icon">
+                                <img src="/img/amp_icons-social.svg" alt="" />
+              </div>
+              <h3 class="feature_title">Your Social Life</h3>
+              <p class="feature_blurb">Stay connected with your fans while increasing your audience using Amp&#039;s social integrations.</p>
+            </li>
+
+          
+            <li class="feature fourcol ">
+              <div class="feature_icon">
+                                <img src="/img/amp_icons-analytics2.svg" alt="" />
+              </div>
+              <h3 class="feature_title">Your Analytics</h3>
+              <p class="feature_blurb">Amp provides meaningful stats on things like downloads and site views, allowing you to keep an eye on your progress.</p>
+            </li>
+
+          
+            <li class="feature fourcol ">
+              <div class="feature_icon">
+                                <img src="/img/amp_icons-mailing.svg" alt="" />
+              </div>
+              <h3 class="feature_title">Your Mailing List</h3>
+              <p class="feature_blurb">Amp&#039;s mailing list works for you. Collect email addresses directly from your website and build a loyal following.</p>
+            </li>
+
+          
+            <li class="feature fourcol last">
+              <div class="feature_icon">
+                                <img src="/img/amp_icons-support.svg" alt="" />
+              </div>
+              <h3 class="feature_title">Your Support</h3>
+              <p class="feature_blurb">You have access to powerful support and customer service from musicians and designers.</p>
+            </li>
+
+                    
+        </ul>
+
+            
+    </div>
+    
+  </div>
+  
+    <footer id="main_footer">
+      
+      <div class="wrap">
+        
+        <h2>Interested in getting on Amp?</h2>
+        <p class="footer_tagline">Sign up to stay informed.</p>
+        
+        <div class="signup_form">
+          <!-- Mailchimp FTW -->
+          <form action="http://amp-music.us7.list-manage.com/subscribe/post?u=ea63c1c92daeaa8331d3881f5&amp;id=0576eb5388" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div class="mc-field-group">
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Add your email address">
+            </div>
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>  <div class="clear"><input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          </form>
+        </div>
+        
+        <p class="credits"><span>Made by nice people in Minnesota.</span> <span>&copy; 2015 <a href="http://branberg.com" target="_blank">Branberg</a></span></p>
+
+        <div id="social_boxes">
+
+          <a href="https://twitter.com/musiciansamp" class="twitter-follow-button" data-show-count="false">Follow @musiciansamp</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          
+          <div class="fb-like" data-href="https://www.facebook.com/pages/Amp-Music/537243319678768?ref=hl" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+
+          <div class="clearfix"></div>
+
+        </div>
+
+      </div>
+      
+    </footer>
+
+  </div>
+  
+  <script type='text/javascript' src='/js/scripts.js'></script>
+  
+</body>
+</html>

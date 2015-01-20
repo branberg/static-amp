@@ -1,0 +1,1615 @@
+/* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
+.tooltipster-default {
+  border-radius: 5px; 
+  border: 2px solid #000;
+  background: #4c4c4c;
+  color: #fff;
+}
+
+/* Use this next selector to style things like font-size and line-height: */
+.tooltipster-default .tooltipster-content {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 8px 10px;
+  overflow: hidden;
+}
+
+/* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
+.tooltipster-default .tooltipster-arrow .tooltipster-arrow-border {
+  /* border-color: ... !important; */
+}
+
+
+/* If you're using the icon option, use this next selector to style them */
+.tooltipster-icon {
+  cursor: help;
+  margin-left: 4px;
+}
+
+
+
+
+
+
+
+
+/* This is the base styling required to make all Tooltipsters work */
+.tooltipster-base {
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999999;
+  pointer-events: none;
+  width: auto;
+  overflow: visible;
+}
+.tooltipster-base .tooltipster-content {
+  overflow: hidden;
+}
+
+
+/* These next classes handle the styles for the little arrow attached to the tooltip. By default, the arrow will inherit the same colors and border as what is set on the main tooltip itself. */
+.tooltipster-arrow {
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.tooltipster-arrow span, .tooltipster-arrow-border {
+  display: block;
+  width: 0; 
+  height: 0;
+  position: absolute;
+}
+.tooltipster-arrow-top span, .tooltipster-arrow-top-right span, .tooltipster-arrow-top-left span {
+  border-left: 8px solid transparent !important;
+  border-right: 8px solid transparent !important;
+  border-top: 8px solid;
+  bottom: -7px;
+}
+.tooltipster-arrow-top .tooltipster-arrow-border, .tooltipster-arrow-top-right .tooltipster-arrow-border, .tooltipster-arrow-top-left .tooltipster-arrow-border {
+  border-left: 9px solid transparent !important;
+  border-right: 9px solid transparent !important;
+  border-top: 9px solid;
+  bottom: -7px;
+}
+
+.tooltipster-arrow-bottom span, .tooltipster-arrow-bottom-right span, .tooltipster-arrow-bottom-left span {
+  border-left: 8px solid transparent !important;
+  border-right: 8px solid transparent !important;
+  border-bottom: 8px solid;
+  top: -7px;
+}
+.tooltipster-arrow-bottom .tooltipster-arrow-border, .tooltipster-arrow-bottom-right .tooltipster-arrow-border, .tooltipster-arrow-bottom-left .tooltipster-arrow-border {
+  border-left: 9px solid transparent !important;
+  border-right: 9px solid transparent !important;
+  border-bottom: 9px solid;
+  top: -7px;
+}
+.tooltipster-arrow-top span, .tooltipster-arrow-top .tooltipster-arrow-border, .tooltipster-arrow-bottom span, .tooltipster-arrow-bottom .tooltipster-arrow-border {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.tooltipster-arrow-top-left span, .tooltipster-arrow-bottom-left span {
+  left: 6px;
+}
+.tooltipster-arrow-top-left .tooltipster-arrow-border, .tooltipster-arrow-bottom-left .tooltipster-arrow-border {
+  left: 5px;
+}
+.tooltipster-arrow-top-right span,  .tooltipster-arrow-bottom-right span {
+  right: 6px;
+}
+.tooltipster-arrow-top-right .tooltipster-arrow-border, .tooltipster-arrow-bottom-right .tooltipster-arrow-border {
+  right: 5px;
+}
+.tooltipster-arrow-left span, .tooltipster-arrow-left .tooltipster-arrow-border {
+  border-top: 8px solid transparent !important;
+  border-bottom: 8px solid transparent !important; 
+  border-left: 8px solid;
+  top: 50%;
+  margin-top: -7px;
+  right: -7px;
+}
+.tooltipster-arrow-left .tooltipster-arrow-border {
+  border-top: 9px solid transparent !important;
+  border-bottom: 9px solid transparent !important; 
+  border-left: 9px solid;
+  margin-top: -8px;
+}
+.tooltipster-arrow-right span, .tooltipster-arrow-right .tooltipster-arrow-border {
+  border-top: 8px solid transparent !important;
+  border-bottom: 8px solid transparent !important; 
+  border-right: 8px solid;
+  top: 50%;
+  margin-top: -7px;
+  left: -7px;
+}
+.tooltipster-arrow-right .tooltipster-arrow-border {
+  border-top: 9px solid transparent !important;
+  border-bottom: 9px solid transparent !important; 
+  border-right: 9px solid;
+  margin-top: -8px;
+}
+
+
+/* Some CSS magic for the awesome animations - feel free to make your own custom animations and reference it in your Tooltipster settings! */
+
+.tooltipster-fade {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -ms-transition-property: opacity;
+  transition-property: opacity;
+}
+.tooltipster-fade-show {
+  opacity: 1;
+}
+
+.tooltipster-grow {
+  -webkit-transform: scale(0,0);
+  -moz-transform: scale(0,0);
+  -o-transform: scale(0,0);
+  -ms-transform: scale(0,0);
+  transform: scale(0,0);
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -ms-transition-property: -ms-transform;
+  transition-property: transform;
+  -webkit-backface-visibility: hidden;
+}
+.tooltipster-grow-show {
+  -webkit-transform: scale(1,1);
+  -moz-transform: scale(1,1);
+  -o-transform: scale(1,1);
+  -ms-transform: scale(1,1);
+  transform: scale(1,1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+}
+
+.tooltipster-swing {
+  opacity: 0;
+  -webkit-transform: rotateZ(4deg);
+  -moz-transform: rotateZ(4deg);
+  -o-transform: rotateZ(4deg);
+  -ms-transform: rotateZ(4deg);
+  transform: rotateZ(4deg);
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -ms-transition-property: -ms-transform;
+  transition-property: transform;
+}
+.tooltipster-swing-show {
+  opacity: 1;
+  -webkit-transform: rotateZ(0deg);
+  -moz-transform: rotateZ(0deg);
+  -o-transform: rotateZ(0deg);
+  -ms-transform: rotateZ(0deg);
+  transform: rotateZ(0deg);
+  -webkit-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4); 
+  -moz-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4); 
+  -ms-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4); 
+  -o-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4); 
+  transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
+}
+
+.tooltipster-fall {
+  top: 0;
+  -webkit-transition-property: top;
+  -moz-transition-property: top;
+  -o-transition-property: top;
+  -ms-transition-property: top;
+  transition-property: top;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+}
+.tooltipster-fall-show {
+}
+.tooltipster-fall.tooltipster-dying {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -ms-transition-property: all;
+  transition-property: all;
+  top: 0px !important;
+  opacity: 0;
+}
+
+.tooltipster-slide {
+  left: -40px;
+  -webkit-transition-property: left;
+  -moz-transition-property: left;
+  -o-transition-property: left;
+  -ms-transition-property: left;
+  transition-property: left;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+}
+.tooltipster-slide.tooltipster-slide-show {
+}
+.tooltipster-slide.tooltipster-dying {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -ms-transition-property: all;
+  transition-property: all;
+  left: 0px !important;
+  opacity: 0;
+}
+
+
+/* CSS transition for when contenting is changing in a tooltip that is still open. The only properties that will NOT transition are: width, height, top, and left */
+.tooltipster-content-changing {
+  opacity: 0.5;
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+
+
+
+@import url(normalize.css);
+.wrap {
+  max-width: 87.5%;
+  margin: 0 auto;
+  overflow: hidden; }
+
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+  float: left;
+  margin-right: 0; }
+
+.onecol {
+  width: 100%; }
+
+.twocol {
+  width: 100%; }
+
+.threecol {
+  width: 100%; }
+
+.fourcol {
+  width: 100%; }
+
+.fivecol {
+  width: 100%; }
+
+.sixcol {
+  width: 100%; }
+
+.sevencol {
+  width: 100%; }
+
+.eightcol {
+  width: 100%; }
+
+.ninecol {
+  width: 100%; }
+
+.tencol {
+  width: 100%; }
+
+.elevencol {
+  width: 100%; }
+
+.twelvecol {
+  width: 100%; }
+
+.last {
+  margin-right: 0 !important; }
+
+/*
+@media only screen and (min-width: 480px) {
+  
+  .wrap{
+    
+  }
+  .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol{
+    
+    
+    
+  }
+  .onecol{ width:100%; }
+  .twocol{ width:100%; }
+  .threecol{ width:100%; }
+  .fourcol{ width:100%; }
+  .fivecol{ width:100%; }
+  .sixcol{ width:100%; }
+  .sevencol{ width:100%; }
+  .eightcol{ width:100%; }
+  .ninecol{ width:100%; }
+  .tencol{ width:100%; }
+  .elevencol{ width:100%; }
+  .twelvecol{ width:100%; }
+  
+  .last{}
+  .first{}
+  
+}
+*/
+@media only screen and (min-width: 768px) {
+  .wrap {
+    max-width: 94.79%;
+    padding: 0 20px; }
+
+  .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+    margin-right: 2.13%; }
+
+  .onecol {
+    width: 6.38%; }
+
+  .twocol {
+    width: 14.89%; }
+
+  .threecol {
+    width: 23.4%; }
+
+  .fourcol {
+    width: 31.91%; }
+
+  .fivecol {
+    width: 37.42%; }
+
+  .sixcol {
+    width: 48.93%; }
+
+  .sevencol {
+    width: 57.44%; }
+
+  .eightcol {
+    width: 65.95%; }
+
+  .ninecol {
+    width: 74.46%; }
+
+  .tencol {
+    width: 82.97%; }
+
+  .elevencol {
+    width: 91.48%; }
+
+  .twelvecol {
+    width: 99.99%; } }
+@media only screen and (min-width: 1024px) {
+  .wrap {
+    max-width: 940px;
+    padding: 0 10px; }
+
+  .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+    margin-right: 2.13%; }
+
+  .onecol {
+    width: 6.38%; }
+
+  .twocol {
+    width: 14.89%; }
+
+  .threecol {
+    width: 23.4%; }
+
+  .fourcol {
+    width: 31.91%; }
+
+  .fivecol {
+    width: 37.42%; }
+
+  .sixcol {
+    width: 48.93%; }
+
+  .sevencol {
+    width: 57.44%; }
+
+  .eightcol {
+    width: 65.95%; }
+
+  .ninecol {
+    width: 74.46%; }
+
+  .tencol {
+    width: 82.97%; }
+
+  .elevencol {
+    width: 91.48%; }
+
+  .twelvecol {
+    width: 99.99%; }
+
+  .last {
+    margin-right: 0; } }
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+  margin: 5px 20px 20px 0; }
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto; }
+
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px; }
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0; }
+
+.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto; }
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px; }
+
+a img.alignnone {
+  margin: 5px 20px 20px 0; }
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0; }
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center; }
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0; }
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0; }
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px; }
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto; }
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px; }
+
+/********************************************************************
+*** GLOBALS
+*********************************************************************/
+body {
+  font-family: "Open Sans", sans-serif; }
+
+body.page-template-template-landing-php {
+  text-align: center; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif; }
+
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.9em; }
+
+a {
+  color: black;
+  text-decoration: none; }
+
+ul, ol {
+  margin: 0;
+  padding: 0; }
+  ul li, ol li {
+    list-style: none; }
+
+.clearfix {
+  clear: both; }
+
+#mobile_menu {
+  background: black;
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  height: 100%; }
+  #mobile_menu a {
+    color: white;
+    display: block;
+    padding: 0.4em 0.6em; }
+    #mobile_menu a:hover {
+      background: #444444; }
+  #mobile_menu ul {
+    margin-left: 60px;
+    padding: 20px;
+    font-family: "Montserrat", sans-serif;
+    text-align: left;
+    font-size: 1.5em; }
+
+#wrapper {
+  position: relative;
+  z-index: 100;
+  background: #f5f5f5; }
+
+body.page-template-template-landing-php #wrapper {
+  background: white; }
+
+/********************************************************************
+*** HEADER
+*********************************************************************/
+#main_header {
+  padding: 20px;
+  background: white; }
+  #main_header .wrap {
+    max-width: 100%;
+    overflow: hidden; }
+  #main_header #header_logo {
+    display: block;
+    float: left; }
+    #main_header #header_logo img {
+      display: block;
+      height: 20px;
+      width: auto; }
+    #main_header #header_logo #mini_logo {
+      display: none; }
+    #main_header #header_logo #full_logo {
+      display: block; }
+  #main_header #mobile_toggle {
+    display: block;
+    width: 20px;
+    float: right; }
+    #main_header #mobile_toggle img {
+      display: block;
+      width: 100%;
+      height: auto; }
+  #main_header #main_nav {
+    display: none; }
+
+#content_spacer {
+  display: none; }
+
+/********************************************************************
+*** WELCOME SLIDE
+*********************************************************************/
+#welcome_slide {
+  background: url(../img/mobile_background.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative; }
+  #welcome_slide #video_background {
+    display: none; }
+  #welcome_slide #video_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); }
+  #welcome_slide #welcome_text {
+    padding: 100px 20px;
+    position: relative; }
+    #welcome_slide #welcome_text img {
+      display: none; }
+    #welcome_slide #welcome_text #tagline {
+      color: black;
+      margin: 0;
+      font-size: 1.75em; }
+
+/********************************************************************
+*** MAIN CONTENT
+*********************************************************************/
+#main_content {
+  padding: 40px 0; }
+  #main_content h2.tagline {
+    font-size: 1.4em;
+    margin: 0; }
+    #main_content h2.tagline span {
+      display: block; }
+  #main_content p.sub_tag {
+    font-size: 1em;
+    color: #969696;
+    margin: 6px 0; }
+
+.features {
+  margin: 40px 0 0 0;
+  overflow: hidden; }
+  .features .feature {
+    margin-bottom: 60px;
+    display: block; }
+    .features .feature .feature_icon img {
+      width: auto;
+      height: 50px;
+      display: inline-block;
+      vertical-align: top; }
+    .features .feature .feature_title {
+      font-size: 1.4em;
+      margin: 20px 0 8px 0; }
+    .features .feature .feature_blurb {
+      margin: 0;
+      color: #969696; }
+  .features .feature:last-child {
+    margin-bottom: 0; }
+
+/********************************************************************
+*** BLOG STUFF
+*********************************************************************/
+#blogroll {
+  margin-top: 30px; }
+
+article.post {
+  background: white;
+  padding: 6%;
+  margin: 0 0 8% 0; }
+  article.post .post_header {
+    text-align: center; }
+    article.post .post_header h2 {
+      margin: 0;
+      padding-top: 6%; }
+      article.post .post_header h2 a:hover {
+        text-decoration: underline;
+        color: #343434; }
+    article.post .post_header .meta {
+      text-align: left;
+      overflow: hidden;
+      padding: 25px 0;
+      font-size: 0.75em; }
+      article.post .post_header .meta img.avatar {
+        width: 30px;
+        height: 30px;
+        display: none;
+        margin-right: 15px;
+        -webkit-border-top-right-radius: 15px;
+        -webkit-border-bottom-right-radius: 15px;
+        -webkit-border-bottom-left-radius: 15px;
+        -webkit-border-top-left-radius: 15px;
+        -moz-border-radius-topright: 15px;
+        -moz-border-radius-bottomright: 15px;
+        -moz-border-radius-bottomleft: 15px;
+        -moz-border-radius-topleft: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px; }
+      article.post .post_header .meta .author_and_date {
+        color: #969696; }
+        article.post .post_header .meta .author_and_date a {
+          color: black;
+          font-style: italic; }
+        article.post .post_header .meta .author_and_date .post_author {
+          font-style: italic; }
+  article.post .content {
+    color: #333333;
+    font-size: 1em;
+    line-height: 1.2em;
+    font-weight: 300; }
+    article.post .content > :first-child {
+      margin-top: 0; }
+    article.post .content ol, article.post .content ul {
+      padding-left: 26px; }
+    article.post .content ol li {
+      list-style: decimal; }
+    article.post .content ul li {
+      list-style: disc; }
+    article.post .content pre {
+      background: #323232;
+      color: #ffffff;
+      padding: 18px;
+      -webkit-border-top-right-radius: 4px;
+      -webkit-border-bottom-right-radius: 4px;
+      -webkit-border-bottom-left-radius: 4px;
+      -webkit-border-top-left-radius: 4px;
+      -moz-border-radius-topright: 4px;
+      -moz-border-radius-bottomright: 4px;
+      -moz-border-radius-bottomleft: 4px;
+      -moz-border-radius-topleft: 4px;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px; }
+    article.post .content a {
+      border-bottom: solid 2px #cccccc; }
+      article.post .content a:hover {
+        border-bottom-color: black; }
+    article.post .content .wp-caption {
+      max-width: 100%;
+      margin-bottom: 1em; }
+      article.post .content .wp-caption img {
+        max-width: 100%;
+        height: auto;
+        display: inline-block; }
+      article.post .content .wp-caption p.wp-caption-text {
+        font-size: 0.60em;
+        color: #969696;
+        font-style: italic;
+        text-align: right;
+        margin: 0; }
+  article.post .post_footer {
+    text-align: center;
+    padding: 40px 0; }
+    article.post .post_footer > span {
+      font-style: italic;
+      color: #a8a8a8;
+      font-size: 1.2em;
+      font-weight: 300;
+      display: inline-block;
+      margin-right: 0px; }
+    article.post .post_footer ul.share_links {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      top: 3px; }
+      article.post .post_footer ul.share_links li {
+        list-style: none;
+        display: block;
+        float: left; }
+        article.post .post_footer ul.share_links li a {
+          display: block;
+          height: 20px;
+          padding: 0 10px;
+          position: relative;
+          /*.tooltip_text{
+            display: block;
+            padding: 4px 8px;
+            background: #a8a8a8;
+            position: absolute;
+            overflow: hidden;
+            white-space: nowrap;
+            bottom: 30px;
+            font-weight:300;
+            font-size: 1em;
+            color: $white;
+            left:50%;
+            @include border-radius( 4px, 4px, 4px, 4px);
+          }*/ }
+          article.post .post_footer ul.share_links li a svg path {
+            fill: #a8a8a8; }
+      article.post .post_footer ul.share_links li.twitter a {
+        width: 25px; }
+      article.post .post_footer ul.share_links li.facebook a {
+        width: 20px; }
+      article.post .post_footer ul.share_links li.clipboard a {
+        width: 20px; }
+      article.post .post_footer ul.share_links li.twitter a:hover svg path {
+        fill: #00aced; }
+      article.post .post_footer ul.share_links li.facebook a:hover svg path {
+        fill: #3b5998; }
+      article.post .post_footer ul.share_links li.clipboard a:hover svg path {
+        fill: #ED5A24; }
+
+/* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
+.tooltipster-default {
+  border: none;
+  background: none;
+  color: white; }
+  .tooltipster-default .tooltipster-content {
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    padding: 0;
+    overflow: hidden; }
+    .tooltipster-default .tooltipster-content .fill {
+      padding: 8px 12px;
+      border-radius: 3px; }
+    .tooltipster-default .tooltipster-content .fill.tweet {
+      background: #00aced; }
+    .tooltipster-default .tooltipster-content .fill.like {
+      background: #3b5998; }
+
+/* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
+.tooltipster-default .tooltipster-arrow .tooltipster-arrow-border {
+  /* border-color: ... !important; */ }
+
+/********************************************************************
+*** FOOTER
+*********************************************************************/
+body.page-template-template-landing-php #main_footer {
+  border-top: solid 1px #e2e2e2; }
+
+#main_footer {
+  color: #969696;
+  padding: 40px 0;
+  text-align: center; }
+  #main_footer .wrap {
+    overflow: hidden; }
+  #main_footer h2 {
+    margin: 0 0 10px 0;
+    color: black; }
+  #main_footer .footer_tagline {
+    margin: 0;
+    font-size: 1.2em; }
+  #main_footer .signup_form {
+    margin: 40px 0; }
+    #main_footer .signup_form form input {
+      display: block;
+      border: none;
+      -webkit-border-top-right-radius: 6px;
+      -webkit-border-bottom-right-radius: 6px;
+      -webkit-border-bottom-left-radius: 6px;
+      -webkit-border-top-left-radius: 6px;
+      -moz-border-radius-topright: 6px;
+      -moz-border-radius-bottomright: 6px;
+      -moz-border-radius-bottomleft: 6px;
+      -moz-border-radius-topleft: 6px;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+      border-bottom-left-radius: 6px;
+      border-top-left-radius: 6px;
+      background: none;
+      padding: 4%;
+      width: 91%;
+      border: 1px solid #969696; }
+    #main_footer .signup_form form input[type="email"] {
+      background: white;
+      margin: 0 0 10px 0;
+      outline: none;
+      color: black; }
+    #main_footer .signup_form form input[type="submit"] {
+      background: #969696;
+      color: white;
+      text-align: center;
+      width: 100%; }
+    #main_footer .signup_form form ::-webkit-input-placeholder {
+      color: #969696; }
+    #main_footer .signup_form form :-moz-placeholder {
+      color: #969696; }
+    #main_footer .signup_form form ::-moz-placeholder {
+      color: #969696; }
+    #main_footer .signup_form form :-ms-input-placeholder {
+      color: #969696; }
+  #main_footer .credits {
+    color: #969696;
+    font-size: .8em; }
+    #main_footer .credits span {
+      display: block; }
+    #main_footer .credits a {
+      color: black; }
+  #main_footer #social_boxes .twitter-follow-button {
+    margin: 20px auto;
+    display: block; }
+
+@media only screen and (min-width: 768px) {
+  /********************************************************************
+  *** GLOBALS
+  *********************************************************************/
+  h2 {
+    font-size: 2em; }
+
+  #mobile_menu {
+    display: none; }
+
+  /********************************************************************
+  *** HEADER
+  *********************************************************************/
+  #main_header #mobile_toggle {
+    display: none; }
+  #main_header #main_nav {
+    display: block;
+    float: right; }
+    #main_header #main_nav ul {
+      overflow: hidden; }
+      #main_header #main_nav ul li {
+        display: block;
+        float: left; }
+        #main_header #main_nav ul li a {
+          display: block;
+          font-size: 1.2em;
+          padding: 0 1em; }
+      #main_header #main_nav ul li.current_page_parent a,
+      #main_header #main_nav ul li.current_menu_item a {
+        color: #000000; }
+
+  /********************************************************************
+  *** WELCOME SLIDE
+  *********************************************************************/
+  #welcome_slide #welcome_text {
+    padding: 100px; }
+    #welcome_slide #welcome_text #tagline {
+      font-size: 3.5em; }
+
+  /********************************************************************
+  *** MAIN CONTENT
+  *********************************************************************/
+  #main_content h2.tagline {
+    font-size: 1.9em; }
+    #main_content h2.tagline span {
+      display: inline; }
+  #main_content p.sub_tag {
+    font-size: 1.4em; }
+
+  .features .feature:nth-child(3n):after {
+    content: "";
+    display: table;
+    clear: both;
+    width: 100%; }
+
+  /********************************************************************
+  *** BLOG STUFF
+  *********************************************************************/
+  #blogroll {
+    margin-top: 60px; }
+
+  article.post {
+    padding: 6% 16%; }
+    article.post .post_header h2 {
+      padding: 0;
+      font-size: 2.8em;
+      font-weight: 900; }
+    article.post .post_header .meta {
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: 300;
+      padding: 40px 0; }
+      article.post .post_header .meta img.avatar {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        -webkit-border-top-right-radius: 20px;
+        -webkit-border-bottom-right-radius: 20px;
+        -webkit-border-bottom-left-radius: 20px;
+        -webkit-border-top-left-radius: 20px;
+        -moz-border-radius-topright: 20px;
+        -moz-border-radius-bottomright: 20px;
+        -moz-border-radius-bottomleft: 20px;
+        -moz-border-radius-topleft: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px; }
+      article.post .post_header .meta .author_and_date {
+        position: relative;
+        top: -11px; }
+        article.post .post_header .meta .author_and_date a:hover {
+          text-decoration: underline; }
+    article.post .content {
+      font-size: 1.3em;
+      line-height: 1.4em; }
+      article.post .content ol, article.post .content ul {
+        padding-left: 40px; }
+    article.post .post_footer {
+      padding: 20px 0; }
+      article.post .post_footer ul.share_links {
+        top: 9px; }
+        article.post .post_footer ul.share_links li a {
+          padding: 6px;
+          /*.tooltip_text{
+            
+          }*/ }
+
+  /********************************************************************
+  *** FOOTER
+  *********************************************************************/
+  #main_footer .footer_tagline {
+    font-size: 1.3em; }
+  #main_footer .signup_form {
+    width: 70%;
+    margin: 50px auto;
+    clear: both; }
+    #main_footer .signup_form form {
+      overflow: hidden; }
+      #main_footer .signup_form form input {
+        float: left;
+        font-size: 1.3em; }
+      #main_footer .signup_form form input[type="email"] {
+        margin: 0;
+        width: 63%;
+        border-right: none;
+        -webkit-border-top-right-radius: 0;
+        -webkit-border-bottom-right-radius: 0;
+        -webkit-border-bottom-left-radius: 6px;
+        -webkit-border-top-left-radius: 6px;
+        -moz-border-radius-topright: 0;
+        -moz-border-radius-bottomright: 0;
+        -moz-border-radius-bottomleft: 6px;
+        -moz-border-radius-topleft: 6px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 6px;
+        border-top-left-radius: 6px; }
+      #main_footer .signup_form form input[type="submit"] {
+        width: 28%;
+        text-align: center;
+        -webkit-border-top-right-radius: 6px;
+        -webkit-border-bottom-right-radius: 6px;
+        -webkit-border-bottom-left-radius: 0px;
+        -webkit-border-top-left-radius: 0px;
+        -moz-border-radius-topright: 6px;
+        -moz-border-radius-bottomright: 6px;
+        -moz-border-radius-bottomleft: 0px;
+        -moz-border-radius-topleft: 0px;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px; }
+        #main_footer .signup_form form input[type="submit"]:hover {
+          background: #a5a5a5; }
+  #main_footer .credits {
+    margin: 0;
+    font-size: 1em;
+    float: left; }
+    #main_footer .credits span {
+      display: inline; }
+  #main_footer #social_boxes {
+    float: right;
+    width: 250px; }
+    #main_footer #social_boxes .twitter-follow-button {
+      margin: 0 20px 0 0;
+      float: left; }
+    #main_footer #social_boxes .fb-like {
+      float: left; } }
+@media only screen and (min-width: 1024px) {
+  /********************************************************************
+  *** GLOBALS
+  *********************************************************************/
+  h1 {
+    font-size: 3em; }
+
+  /********************************************************************
+  *** HEADER
+  *********************************************************************/
+  body.page-template-template-landing-php #main_header {
+    position: absolute;
+    z-index: 5000;
+    width: 100%;
+    background: none; }
+
+  body.page-template-template-landing-php #header_logo img {
+    height: 40px; }
+  body.page-template-template-landing-php #header_logo #mini_logo {
+    display: block; }
+  body.page-template-template-landing-php #header_logo #full_logo {
+    display: none; }
+
+  body.page-template-template-landing-php #main_nav ul {
+    margin-top: 8px; }
+
+  #main_header {
+    padding: 30px 0;
+    display: block; }
+    #main_header .wrap {
+      max-width: 940px; }
+    #main_header #header_logo:hover img {
+      opacity: 1; }
+    #main_header #header_logo img {
+      height: 30px;
+      opacity: 0.35; }
+    #main_header #header_logo #mini_logo {
+      display: none; }
+    #main_header #header_logo #full_logo {
+      display: block; }
+    #main_header #main_nav ul {
+      margin-top: 2px; }
+      #main_header #main_nav ul li a {
+        padding: 0 0.6em;
+        font-size: 1.2em;
+        color: #bcbcbc;
+        font-weight: 500; }
+        #main_header #main_nav ul li a:hover {
+          color: black; }
+
+  #content_spacer {
+    width: 100%;
+    background: transparent;
+    position: relative;
+    display: none; }
+
+  /********************************************************************
+  *** WELCOME SLIDE
+  *********************************************************************/
+  #welcome_slide {
+    width: 100%;
+    background: none;
+    overflow: hidden; }
+    #welcome_slide #video_background {
+      display: block;
+      position: absolute;
+      width: 100%; }
+      #welcome_slide #video_background video {
+        display: block;
+        min-width: 100%;
+        min-height: 100%; }
+    #welcome_slide #video_overlay {
+      background: rgba(255, 255, 255, 0.92); }
+    #welcome_slide #welcome_text {
+      display: block;
+      padding: 0;
+      text-align: center;
+      width: 100%;
+      opacity: 0; }
+      #welcome_slide #welcome_text img {
+        display: inline-block;
+        margin-bottom: 30px;
+        width: 238px;
+        height: 70px; }
+      #welcome_slide #welcome_text #tagline {
+        color: #969696;
+        font-size: 2.5em;
+        height: 50px;
+        text-shadow: 0 0 100px #969696; }
+
+  /********************************************************************
+  *** MAIN CONTENT
+  *********************************************************************/
+  #main_content {
+    padding: 0 0 60px 0;
+    position: relative;
+    background: white;
+    border-top: solid 1px #e2e2e2; }
+    #main_content h2.tagline {
+      padding: 80px 0; }
+
+  .features {
+    margin-top: 0; }
+    .features .feature .feature_blurb {
+      font-size: 1.1em;
+      font-weight: 100; }
+
+  /********************************************************************
+  *** BLOG STUFF
+  *********************************************************************/
+  /********************************************************************
+  *** FOOTER
+  *********************************************************************/
+  body.page-template-template-landing-php #main_footer {
+    background: white;
+    border: none; }
+
+  #main_footer {
+    border-top: none;
+    position: relative;
+    padding-top: 0; }
+    #main_footer .signup_form form input {
+      padding: 3%; }
+    #main_footer .signup_form form input[type="email"] {
+      width: 65%; }
+    #main_footer .credits {
+      text-align: left; }
+      #main_footer .credits a:hover {
+        text-decoration: underline; } }
+
+
+
+
+
+
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+    background: transparent;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
